@@ -4,6 +4,15 @@
 
 An agent skill that **reads pull request comments and CI failures and fixes them automatically**.
 
+```bash
+# install via https://skills.sh in the project
+npx skills add mnapoli/skills@address-pr-review
+# or install globally with `-g`
+npx skills add -g mnapoli/skills@address-pr-review
+```
+
+Usage:
+
 ```
 /address-pr-review
 ```
@@ -27,6 +36,7 @@ flowchart LR
 ### Prerequisites
 
 - [GitHub CLI](https://cli.github.com/) (`gh`) installed and authenticated
+- [`jq`](https://jqlang.org/) (used by the CI check script)
 
 ### Tips
 
