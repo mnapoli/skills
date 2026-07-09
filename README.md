@@ -6,9 +6,9 @@ An agent skill that **reads pull request comments and CI failures and fixes them
 
 ```bash
 # install via https://skills.sh in the project
-npx skills add mnapoli/skills@address-pr-review
+npx skills add mnapoli/skills/address-pr-review
 # or install globally with `-g`
-npx skills add -g mnapoli/skills@address-pr-review
+npx skills add -g mnapoli/skills/address-pr-review
 ```
 
 Usage:
