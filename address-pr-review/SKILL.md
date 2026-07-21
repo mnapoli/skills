@@ -6,6 +6,8 @@ context: fork
 allowed-tools: Bash(bash ~/.claude/skills/address-pr-review/*), Bash(bash .claude/skills/address-pr-review/*)
 ---
 
+First, run `git branch --show-current` to retrieve the current branch. Do not trust branch/git status information present in the conversation context as it may be stale.
+
 ## Step 1: Fetch unresolved review threads and CI status
 
 Run both helper scripts located in this skill's directory (the directory containing this SKILL.md):
