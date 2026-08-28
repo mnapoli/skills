@@ -31,7 +31,7 @@ After `/unslop`:
 
 > The reviewer is right. The `retry` flag is not a plain configuration option: the scheduler, the plugin API, and the CI integration all read it to decide whether a failed task propagates. Removing it means changing those three call sites, with no schema change and no migration. The current behavior works and the ambiguity only shows up in edge cases, so I recommend keeping the flag and documenting the propagation rule.
 
-Every fact survives. What disappears: the flattery ("not only right"), the fake depth ("points at something deeper"), the "isn't just X; it's Y" construction, the em dash chains, and the closing "it depends" that avoided giving an answer.
+Both versions contain the same facts. The rewrite removes the flattery, the fake depth, the "isn't just X; it's Y" construction and the em dashes, and it replaces the hedged "it depends" ending with an actual recommendation.
 
 ## Address PR review
 
