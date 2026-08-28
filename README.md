@@ -4,10 +4,8 @@
 
 Two agent skills that **detect and remove AI-sounding writing patterns** ("slop") from text, then rewrite it with a genuine human voice. Inspired by [Cursor's unslop skill](https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md).
 
-Both skills refine the original on two points: structural bold is allowed (only scattered emphasis bold is removed), and short natural sentences are preferred over telegraphic fragments.
-
 - [`unslop`](./unslop/SKILL.md) — for English text
-- [`unslop-fr`](./unslop-fr/SKILL.md) — for French text, with French-specific adaptations: a French AI-vocabulary list, and French typography preserved (guillemets, espaces insécables, no Title Case rule)
+- [`unslop-fr`](./unslop-fr/SKILL.md) — for French text
 
 ```bash
 npx skills add -g mnapoli/skills/unslop
@@ -23,15 +21,13 @@ Usage:
 
 ### Example
 
-An agent's analysis after a code review comment, before:
+Before:
 
 > The reviewer's comment is not only right — it points at something deeper. The `retry` flag isn't just a configuration option; it's load-bearing: the scheduler, the plugin API, and the CI integration all rely on it to decide whether a failed task should propagate. Removing it would mean threading an explicit policy through three call sites, and that's the whole cost — no schema change, no migration. That said, keeping it as-is is also defensible: the current behavior is battle-tested, and the ambiguity only surfaces in edge cases. Ultimately, the right move depends on how much you value explicitness over backward compatibility.
 
-After `/unslop`:
+After:
 
 > The reviewer is right. The `retry` flag is not a plain configuration option: the scheduler, the plugin API, and the CI integration all read it to decide whether a failed task propagates. Removing it means changing those three call sites, with no schema change and no migration. The current behavior works and the ambiguity only shows up in edge cases, so I recommend keeping the flag and documenting the propagation rule.
-
-Both versions contain the same facts. The rewrite removes the flattery, the fake depth, the "isn't just X; it's Y" construction and the em dashes, and it replaces the hedged "it depends" ending with an actual recommendation.
 
 ## Address PR review
 
