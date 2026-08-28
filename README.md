@@ -15,8 +15,9 @@ npx skills add -g mnapoli/skills/unslop-fr
 Usage:
 
 ```
-/unslop <file or text>
-/unslop-fr <file or text>
+/unslop README.md
+unslop your previous response
+unslop your responses
 ```
 
 ### Example
