@@ -1,5 +1,26 @@
 # Agent skills
 
+## Unslop
+
+Two agent skills that **detect and remove AI-sounding writing patterns** ("slop") from text, then rewrite it with a genuine human voice. Inspired by [Cursor's unslop skill](https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md).
+
+Both skills refine the original on two points: structural bold is allowed (only scattered emphasis bold is removed), and short natural sentences are preferred over telegraphic fragments.
+
+- [`unslop`](./unslop/SKILL.md) — for English text
+- [`unslop-fr`](./unslop-fr/SKILL.md) — for French text, with French-specific adaptations: a French AI-vocabulary list, and French typography preserved (guillemets, espaces insécables, no Title Case rule)
+
+```bash
+npx skills add -g mnapoli/skills/unslop
+npx skills add -g mnapoli/skills/unslop-fr
+```
+
+Usage:
+
+```
+/unslop <file or text>
+/unslop-fr <file or text>
+```
+
 ## Address PR review
 
 An agent skill that **reads pull request comments and CI failures and fixes them automatically**.
