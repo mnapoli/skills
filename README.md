@@ -21,6 +21,18 @@ Usage:
 /unslop-fr <file or text>
 ```
 
+### Example
+
+An agent's analysis after a code review comment, before:
+
+> The reviewer's comment is not only right — it points at something deeper. The `retry` flag isn't just a configuration option; it's load-bearing: the scheduler, the plugin API, and the CI integration all rely on it to decide whether a failed task should propagate. Removing it would mean threading an explicit policy through three call sites, and that's the whole cost — no schema change, no migration. That said, keeping it as-is is also defensible: the current behavior is battle-tested, and the ambiguity only surfaces in edge cases. Ultimately, the right move depends on how much you value explicitness over backward compatibility.
+
+After `/unslop`:
+
+> The reviewer is right. The `retry` flag is not a plain configuration option: the scheduler, the plugin API, and the CI integration all read it to decide whether a failed task propagates. Removing it means changing those three call sites, with no schema change and no migration. The current behavior works and the ambiguity only shows up in edge cases, so I recommend keeping the flag and documenting the propagation rule.
+
+Every fact survives. What disappears: the flattery ("not only right"), the fake depth ("points at something deeper"), the "isn't just X; it's Y" construction, the em dash chains, and the closing "it depends" that avoided giving an answer.
+
 ## Address PR review
 
 An agent skill that **reads pull request comments and CI failures and fixes them automatically**.
