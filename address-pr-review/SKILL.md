@@ -1,8 +1,6 @@
 ---
 name: address-pr-review
 description: Look at the pull request review comments and address any issues raised.
-disable-model-invocation: true
-context: fork
 allowed-tools: Bash(bash ~/.claude/skills/address-pr-review/*), Bash(bash .claude/skills/address-pr-review/*)
 ---
 
