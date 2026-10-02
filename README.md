@@ -109,3 +109,28 @@ Your agent will:
 
 - [Linear MCP server](https://linear.app/docs/mcp) connected to your agent
 - [GitHub CLI](https://cli.github.com/) (`gh`) installed and authenticated
+
+## Interview
+
+An agent skill that **interviews you about a feature until it has everything needed to write a complete implementation plan**.
+
+```bash
+# install via https://skills.sh in the project
+npx skills add mnapoli/skills/interview
+# or install globally with `-g`
+npx skills add -g mnapoli/skills/interview
+```
+
+Usage:
+
+```
+/interview let users invite teammates to their organization
+```
+
+Your agent will:
+
+- Explore the codebase and `docs/` for related features, patterns and domain concepts
+- Interview you, starting with brainstorming and converging toward a plan: the problem, users, scope, edge cases, data model, UI/UX…
+- Challenge your assumptions, and tell you explicitly when it settles a minor point itself so you can correct it
+- Write the plan in the chat, in the language you used: summary, scope, product requirements and technical plan
+- Wait for your go-ahead before implementing
