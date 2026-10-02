@@ -76,3 +76,36 @@ flowchart LR
 4. Review the code yourself: open comments inline the PR diff
 5. Launch `/address-pr-review` locally so that all comments are addressed
 6. Repeat until the PR is ready to merge
+
+## Implement
+
+An agent skill that **implements a Linear issue end to end**: specs, design, code, tests and pull request.
+
+```bash
+# install via https://skills.sh in the project
+npx skills add mnapoli/skills/implement
+# or install globally with `-g`
+npx skills add -g mnapoli/skills/implement
+```
+
+Usage:
+
+```
+/implement ENG-123
+/implement https://linear.app/acme/issue/ENG-123/...
+```
+
+Your agent will:
+
+- Fetch the issue, related issues and the project from Linear, and move the issue to "In Progress"
+- Create a branch named after the issue
+- Ask you questions one at a time until nothing is left unclear, then write the specs in the issue
+- Go through the architecture with you, one decision at a time, before writing code
+- Implement the change with tests, open a PR that references the issue, and monitor it
+- Record unrelated problems it finds along the way as new Linear issues
+- Finish with a short report of what needs your attention: decisions it made on its own, deviations from the specs, what it could not test
+
+### Prerequisites
+
+- [Linear MCP server](https://linear.app/docs/mcp) connected to your agent
+- [GitHub CLI](https://cli.github.com/) (`gh`) installed and authenticated
