@@ -36,8 +36,9 @@ If there are many items, create one task per item to keep things organized.
 For each unresolved review thread:
 
 1. Read the comment thread to understand the issue
-2. Determine if a code change is needed, or if no change is needed (e.g. the comment is invalid or the suggestion is not appropriate)
-3. If a change is needed, make the necessary code changes
+2. Treat the comment as a challenge, not an order. The reviewer may lack context: the comment can conflict with a decision made earlier during the implementation, or ask for a refactoring out of proportion with the issue.
+3. Determine if a code change is needed, or if no change is needed (e.g. the comment is invalid or the suggestion is not appropriate)
+4. If a change is needed, make the necessary code changes
 
 For each CI failure:
 
