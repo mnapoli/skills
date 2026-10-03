@@ -3,6 +3,7 @@
 - [Address PR review](#address-pr-review): fix CI failures and address PR review comments
 - [Implement](#implement): implement a Linear issue end to end
 - [Interview](#interview): get interviewed about a feature until there is a complete implementation plan
+- [Tell Grok bot](#tell-grok-bot): send a message to your Grok bot agent, to delegate a task or pass on information
 - [Unslop](#unslop): remove AI-sounding writing patterns from English or French text
 
 ## Address PR review
@@ -109,6 +110,43 @@ Your agent will:
 - Challenge your assumptions, and tell you explicitly when it settles a minor point itself so you can correct it
 - Write the plan in the chat, in the language you used: summary, scope, product requirements and technical plan
 - Wait for your go-ahead before implementing
+
+## Tell Grok bot
+
+An agent skill that lets any agent (Claude Code, Codex, Cursor…) **send a message to your Grok bot agent**, for example to delegate a task or pass on something to remember.
+
+```bash
+# install via https://skills.sh in the project
+npx skills add mnapoli/skills/tell-grokbot
+# or install globally with `-g`
+npx skills add -g mnapoli/skills/tell-grokbot
+```
+
+Usage:
+
+```
+/tell-grokbot this feature shipped, plan a blog post about it
+tell Grok bot that we now support PHP 8.5
+```
+
+Your agent will:
+
+- Write a self-contained message (project, what happened, links), since Grok bot doesn't see the conversation
+- Send it to a Grok bot routine through its webhook, then show you what it sent
+
+The agent only sends messages when you ask it to.
+
+### Setup
+
+1. In Grok bot, create a routine with a webhook trigger. Its URL and Bearer key are in the routine's panel: open the agent's name at the top of the chat → Tasks → the routine → Webhook section.
+2. On first use, the agent asks you for the URL and the key, and stores them in `~/.config/grokbot/webhook.env` (readable only by you).
+
+What Grok bot does with the message is up to the routine's instruction.
+
+### Prerequisites
+
+- `curl`
+- [`jq`](https://jqlang.org/)
 
 ## Unslop
 
