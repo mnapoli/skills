@@ -23,6 +23,7 @@ Whenever this skill says to ask the user, ask one question at a time (with the `
     - If the issue has sub-issues, ask which ones are in scope.
     - Once the specs are clear, update the Linear issue description with the detailed specs and move on to the next step.
 7. Design the high-level architecture. The goal of this step is to catch a design going down the wrong path early.
+    - If the issue came with an implementation plan, even partial (in its original description or in a comment), start from it instead of designing from scratch: only go through what it leaves open or unclear, and what the clarified specs changed.
     - For small changes, state the approach in one sentence and move on.
     - Otherwise, go through the design with the user one decision at a time, instead of presenting the whole design at once. The user must approve any significant change to the existing architecture before you write code.
 8. Implement the issue. Make sure to write tests. When relevant, test in a sandbox or staging environment. If you are stuck, ask the user for help or clarification.
