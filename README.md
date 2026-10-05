@@ -57,6 +57,8 @@ flowchart LR
 
 An agent skill that **implements a Linear issue end to end**: specs, design, code, tests and pull request.
 
+<a href="https://www.youtube.com/watch?v=T6NXfxIcxno"><img src="./art/implement-video.jpg" alt="Watch the video: my /implement skill" width="560"></a>
+
 ```bash
 # install via https://skills.sh in the project
 npx skills add mnapoli/skills/implement
