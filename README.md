@@ -10,6 +10,8 @@
 
 An agent skill that **reads pull request comments and CI failures and fixes them automatically**.
 
+<a href="https://www.youtube.com/watch?v=H0nlAvQ6Jlo"><img src="./art/address-pr-review-video.jpg" alt="Watch the video: my /address-pr-review skill" width="560"></a>
+
 ```bash
 # install via https://skills.sh in the project
 npx skills add mnapoli/skills/address-pr-review
